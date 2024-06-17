@@ -15,3 +15,7 @@
 0. Make a defensive tool for this (PCAP Analysis for the DroneID protocol)
 
 
+### Chassis References
+https://www.printables.com/model/198866-airliftpayload-kit-for-dji-mini-2-dji-mini-se-and-
+
+![https://media.printables.com/media/prints/198866/images/2133837_845afd2e-b8b3-4f8b-ac0e-2ed446135257/thumbs/inside/1600x1200/jpg/img_20220702_170732_2.webp](https://media.printables.com/media/prints/198866/images/2133837_845afd2e-b8b3-4f8b-ac0e-2ed446135257/thumbs/inside/1600x1200/jpg/img_20220702_170732_2.webp)
