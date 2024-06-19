@@ -21,3 +21,10 @@ https://www.printables.com/model/198866-airliftpayload-kit-for-dji-mini-2-dji-mi
 ![https://media.printables.com/media/prints/198866/images/2133837_845afd2e-b8b3-4f8b-ac0e-2ed446135257/thumbs/inside/1600x1200/jpg/img_20220702_170732_2.webp](https://media.printables.com/media/prints/198866/images/2133837_845afd2e-b8b3-4f8b-ac0e-2ed446135257/thumbs/inside/1600x1200/jpg/img_20220702_170732_2.webp)
 
 ![https://i.pinimg.com/736x/6f/09/19/6f0919c226c9fd8ee5ef6e148392adbf.jpg](https://i.pinimg.com/736x/6f/09/19/6f0919c226c9fd8ee5ef6e148392adbf.jpg)
+
+
+### JST Connector Configuration
+
+![https://preview.redd.it/0odhcsc7giz41.jpg?auto=webp&s=be7400b5e8d66ac18309d1b59dc3a176c6500ef2](https://preview.redd.it/0odhcsc7giz41.jpg?auto=webp&s=be7400b5e8d66ac18309d1b59dc3a176c6500ef2)
+
+XH 2.54 connector
