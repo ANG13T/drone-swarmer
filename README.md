@@ -22,6 +22,15 @@ https://www.printables.com/model/198866-airliftpayload-kit-for-dji-mini-2-dji-mi
 
 ![https://i.pinimg.com/736x/6f/09/19/6f0919c226c9fd8ee5ef6e148392adbf.jpg](https://i.pinimg.com/736x/6f/09/19/6f0919c226c9fd8ee5ef6e148392adbf.jpg)
 
+### Airlift Creation
+- Individual supports 1 JST Conn In
+- Supports 1 D1 Mini on the side
+- D1 Mini Inlet + Side Enclose
+
+### Mainframe Creation
+- Support 4 JST Conn OUT Pins
+- Support 1 JST CONN IN Pin -> 1 D1 Mini + 4 JST CONN Out
+- D1 Mini Inlet + Mainframe Snapon
 
 ### JST Connector Configuration
 
