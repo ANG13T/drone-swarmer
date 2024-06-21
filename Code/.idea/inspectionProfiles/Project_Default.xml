@@ -1,0 +1,10 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CLangTidyLocal" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ClangTidy" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="preferClangTidyFilesOverIDESettings" value="false" />
+    </inspection_tool>
+    <inspection_tool class="Misra" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
