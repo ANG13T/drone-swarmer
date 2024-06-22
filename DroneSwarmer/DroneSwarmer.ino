@@ -8,7 +8,7 @@
  * This code base is a derivative work based on the RemoteIDSpoofer project.
  * The majority of the code, architecture, and core functionality have been derived from the original RemoteIDSpoofer repository.
  *
- * Original RemoteIDSpoofer Project: https://github.com/OriginalAuthor/RemoteIDSpoofer
+ * Original RemoteIDSpoofer Project: https://github.com/jjshoots/RemoteIDSpoofer
  * Copyright (c) 2020-2022, Steve Jack.
  *
  * Drone Swarmer (a variant of the RemoteIDSpoofer project) includes the following modifications:
@@ -25,18 +25,18 @@
 
 #include "spoofer.h"
 
-int num_spoofers = 5;
+int num_spoofers = 16;
 Spoofer spoofers[16];
 
-double latitude = 37.7749;
-double longitude = -122.4194;
+double latitude = 48.39462035187865;
+double longitude = -114.33447620499432;
 
 void setup() {
   Serial.begin(115200);
   
     for (int i = 0; i < num_spoofers; i++) {
       spoofers[i].init();
-      spoofers[i].updateLocation(frontend.latitude, frontend.longitude);
+      spoofers[i].updateLocation(latitude, longitude);
     }
 }
 
