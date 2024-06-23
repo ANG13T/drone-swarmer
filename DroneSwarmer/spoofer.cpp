@@ -1,6 +1,10 @@
 #include "spoofer.h"
+#include <time.h>
 
 void Spoofer::init() {
+  // set to a random seed for assigning the ID
+  srand(time(NULL));
+  
   // time things
   memset(&clock_tm,0,sizeof(struct tm));
   clock_tm.tm_hour  =  10;
@@ -92,5 +96,6 @@ String Spoofer::getID() {
   {
     ID.concat(characters[(rand() % characters.length())]);
   }
+  Serial.println(ID);
   return ID;
 }
