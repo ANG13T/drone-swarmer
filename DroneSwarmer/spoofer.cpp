@@ -1,10 +1,8 @@
 #include "spoofer.h"
 #include <time.h>
+#include <ESP8266WiFi.h>
 
 void Spoofer::init() {
-  // set to a random seed for assigning the ID
-  srand(time(NULL));
-  
   // time things
   memset(&clock_tm,0,sizeof(struct tm));
   clock_tm.tm_hour  =  10;
@@ -90,12 +88,15 @@ void Spoofer::update() {
 }
 
 String Spoofer::getID() {
+  // Setting random seed below
+  uint32_t seed = ESP.getChipId() + micros();
+  randomSeed(seed);
+
   String characters = String("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
   String ID = "";
   for (int i = 0; i < 16; i++)
   {
     ID.concat(characters[(rand() % characters.length())]);
   }
-  Serial.println(ID);
   return ID;
 }
