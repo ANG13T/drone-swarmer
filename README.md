@@ -205,6 +205,49 @@ Inside `id_open.cpp`:
   beacon_interval = 10;
 ```
 
+```
+#if ID_OD_WIFI_BEACON && !USE_BEACON_FUNC
+
+  init_beacon();
+
+  // payload
+  beacon_payload      = &beacon_frame[beacon_offset];
+  beacon_offset      += 7;
+
+  *beacon_payload++   = 0xdd;
+  beacon_length       = beacon_payload++;
+
+  *beacon_payload++   = 0xfa;
+  *beacon_payload++   = 0x0b;
+  *beacon_payload++   = 0xbc;
+
+  *beacon_payload++   = 0x0d;
+  beacon_counter      = beacon_payload++;
+
+  beacon_max_packed   = BEACON_FRAME_SIZE - beacon_offset - 2;
+
+  if (beacon_max_packed > (ODID_PACK_MAX_MESSAGES * ODID_MESSAGE_SIZE)) {
+
+    beacon_max_packed = (ODID_PACK_MAX_MESSAGES * ODID_MESSAGE_SIZE);
+  }
+```
+
+Investigating further into `id_open_beacon.cpp`:
+
+```
+for (i = 0; i < 6; ++i) {
+    header->dest_addr[i] = 0xff;
+    header->src_addr[i]  =  
+    header->bssid[i]     = WiFi_mac_addr[i]; # <-- look into this [base station identifier]
+ }
+```
+
+### Root Problem... MAC Address Collision
+
+
+### Adjustment
+Refer to: `ADJUSTMENT: 7/28 - 17:31 EDT` and `ADJUSTMENT: 7/28 - 17:38 EDT` inside `id_open.cpp`
+
 
 
 ### OpenDroneID Protocol Analysis

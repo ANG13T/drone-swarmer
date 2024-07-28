@@ -45,6 +45,7 @@
 
 #include <time.h>
 #include <sys/time.h>
+#include <unistd.h>
 
 extern "C" {
   int      clock_gettime(clockid_t,struct timespec *);
@@ -57,6 +58,13 @@ extern "C" {
  *
  */
 
+ // ADJUSTMENT: 7/28 - 17:38 EDT
+ unsigned int custom_seed() {
+     unsigned int seed = (unsigned int)time(NULL);
+     seed ^= (unsigned int)getpid(); // Process ID
+     return seed;
+ }
+
 ID_OpenDrone::ID_OpenDrone() {
 
   int                i;
@@ -67,7 +75,8 @@ ID_OpenDrone::ID_OpenDrone() {
   UAS_operator = (char *) dummy;
 
 #if ID_OD_WIFI
-
+  // ADJUSTMENT: 7/28 - 17:31 EDT
+  srand(custom_seed());
   // scrambled, not poached
   // Nodemcu doesn't like certain mac addresses
   // setting the first value to 0 seems to solve this
