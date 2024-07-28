@@ -1,7 +1,5 @@
 # Drone Swarmer
 
-
-
 ### Troubleshooting
 
 - 16 same set of drones
@@ -162,6 +160,52 @@ No regions currently require drone ID publication via the internet (Network Remo
 
 Security of drone ID data is partly under definition. The Japan rule requires a signature of the drone ID data to be broadcasted in the AUTHENTICATION message. The details are in Japanese. No such requirement currently exists for the US and EU. It is possible that some use cases in the future might require more security related activities for drone ID data. Some additional protocol specification work is being drafted by the IETF in the DRIP working group.
 
+During the PCAP scan analysis, the result would contain "groupings" of MAC Addresses such as
+- 00:57:db:5e:20:fb
+- 00:2d:cf:46:29:04
+- 00:38:a8:4e:a6:14
+- 00:57:db:5e:20:fb
+- 00:7e:77:c6:2f:26
+- 00:93:25:56:24:44
+
+### Wireshark Queries
+
+Investigating further into a single MAC Address grouping (`00:2d:cf:46:29:04`)
+
+`opendroneid && wlan.sa == 00:2d:cf:46:29:04 && wlan.fc.type_subtype == 0x08`
+
+Where `00:2d:cf:46:29:0` is the MAC Address of the drone
+
+`0x08` filters for beacon frames (type = 0x00, subtype = 0x08)
+
+I noticed DOZENS of different packets...
+
+This is due to the lack of random seeding within the Drone Spoofer code...
+
+To remedy this, I will need to add a random seed to MAC Address generation process
+
+Inside `id_open.cpp`:
+
+```cpp
+#if ID_OD_WIFI
+
+  // scrambled, not poached
+  // Nodemcu doesn't like certain mac addresses
+  // setting the first value to 0 seems to solve this
+  WiFi_mac_addr[i] = 0;
+  for (int i = 1; i < 6; i++) {
+    // WiFi_mac_addr[i] = (uint8_t) (rand() % 100 + 100);
+    WiFi_mac_addr[i] = (uint8_t) (rand() % 256);
+  }
+  
+  memset(ssid,0,sizeof(ssid));
+
+  strcpy(ssid,"UAS_ID_OPEN");
+
+  beacon_interval = 10;
+```
+
+
 
 ### OpenDroneID Protocol Analysis
 https://mavlink.io/en/services/opendroneid.html
@@ -169,3 +213,7 @@ https://mavlink.io/en/services/opendroneid.html
 https://github.com/opendroneid/opendroneid-core-c
 
 https://github.com/opendroneid/receiver-android
+
+### MAC Address List ---- 
+
+> 
