@@ -45,7 +45,7 @@
 
 #include <time.h>
 #include <sys/time.h>
-#include <unistd.h>
+#include <ESP8266WiFi.h>
 
 extern "C" {
   int      clock_gettime(clockid_t,struct timespec *);
@@ -61,7 +61,8 @@ extern "C" {
  // ADJUSTMENT: 7/28 - 17:38 EDT
  unsigned int custom_seed() {
      unsigned int seed = (unsigned int)time(NULL);
-     seed ^= (unsigned int)getpid(); // Process ID
+     uint32_t chip_id = ESP.getChipId();
+     seed ^= (unsigned int)(chip_id & 0xFFFF);  // Use lower 16 bits of the chip ID
      return seed;
  }
 

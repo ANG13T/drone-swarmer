@@ -247,7 +247,19 @@ for (i = 0; i < 6; ++i) {
 
 ### Adjustment
 Refer to: `ADJUSTMENT: 7/28 - 17:31 EDT` and `ADJUSTMENT: 7/28 - 17:38 EDT` inside `id_open.cpp`
+DroneSwarmer_Revised_1_MAC_Collision.bin
 
+Adding more seeding values...
+
+```
+ // ADJUSTMENT: 7/28 - 17:38 EDT
+ unsigned int custom_seed() {
+     unsigned int seed = (unsigned int)time(NULL);
+     uint32_t chip_id = ESP.getChipId();
+     seed ^= (unsigned int)(chip_id & 0xFFFF);  // Use lower 16 bits of the chip ID
+     return seed;
+ }
+```
 
 
 ### OpenDroneID Protocol Analysis
