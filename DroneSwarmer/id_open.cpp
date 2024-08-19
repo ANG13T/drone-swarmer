@@ -59,12 +59,12 @@ extern "C" {
  */
 
  // ADJUSTMENT: 7/28 - 17:38 EDT
- unsigned int custom_seed() {
-     unsigned int seed = (unsigned int)time(NULL);
-     uint32_t chip_id = ESP.getChipId();
-     seed ^= (unsigned int)(chip_id & 0xFFFF);  // Use lower 16 bits of the chip ID
-     return seed;
- }
+// unsigned int custom_seed() {
+//     unsigned int seed = (unsigned int)time(NULL);
+//     uint32_t chip_id = ESP.getChipId();
+//     seed ^= (unsigned int)(chip_id & 0xFFFF);  // Use lower 16 bits of the chip ID
+//     return seed;
+// }
 
 ID_OpenDrone::ID_OpenDrone() {
 
@@ -77,14 +77,14 @@ ID_OpenDrone::ID_OpenDrone() {
 
 #if ID_OD_WIFI
   // ADJUSTMENT: 7/28 - 17:31 EDT
-  srand(custom_seed());
+ // srand(custom_seed());
   // scrambled, not poached
   // Nodemcu doesn't like certain mac addresses
   // setting the first value to 0 seems to solve this
   WiFi_mac_addr[i] = 0;
   for (int i = 1; i < 6; i++) {
-    // WiFi_mac_addr[i] = (uint8_t) (rand() % 100 + 100);
-    WiFi_mac_addr[i] = (uint8_t) (rand() % 256);
+    WiFi_mac_addr[i] = (uint8_t) (rand() % 100 + 100);
+    // WiFi_mac_addr[i] = (uint8_t) (rand() % 256);
   }
   
   memset(ssid,0,sizeof(ssid));
