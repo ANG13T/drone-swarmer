@@ -269,6 +269,9 @@ https://github.com/opendroneid/opendroneid-core-c
 
 https://github.com/opendroneid/receiver-android
 
-### MAC Address List ---- 
-
+### MAC Address List ----
 > 
+> 
+### LOGGING
+
+`8/19` - Reverting back to OG binary to get the project back to working shape with limiting capacity of 16 drones
