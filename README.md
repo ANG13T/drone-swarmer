@@ -1,5 +1,16 @@
 # Drone Swarmer
 
+## Hardware Specifications
+- Perf Board
+- Neo 6M GPS Module
+- D1 Mini ESP8266
+
+Pin Outs:
+GND - GND
+VCC - 5V
+RX - D6
+TX - D5
+
 ### Troubleshooting
 
 - 16 same set of drones
