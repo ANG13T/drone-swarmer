@@ -45,7 +45,6 @@
 
 #include <time.h>
 #include <sys/time.h>
-#include <ESP8266WiFi.h>
 
 extern "C" {
   int      clock_gettime(clockid_t,struct timespec *);
@@ -58,14 +57,6 @@ extern "C" {
  *
  */
 
- // ADJUSTMENT: 7/28 - 17:38 EDT
-// unsigned int custom_seed() {
-//     unsigned int seed = (unsigned int)time(NULL);
-//     uint32_t chip_id = ESP.getChipId();
-//     seed ^= (unsigned int)(chip_id & 0xFFFF);  // Use lower 16 bits of the chip ID
-//     return seed;
-// }
-
 ID_OpenDrone::ID_OpenDrone() {
 
   int                i;
@@ -76,15 +67,14 @@ ID_OpenDrone::ID_OpenDrone() {
   UAS_operator = (char *) dummy;
 
 #if ID_OD_WIFI
-  // ADJUSTMENT: 7/28 - 17:31 EDT
- // srand(custom_seed());
+
   // scrambled, not poached
   // Nodemcu doesn't like certain mac addresses
   // setting the first value to 0 seems to solve this
   WiFi_mac_addr[i] = 0;
   for (int i = 1; i < 6; i++) {
-    WiFi_mac_addr[i] = (uint8_t) (rand() % 100 + 100);
-    // WiFi_mac_addr[i] = (uint8_t) (rand() % 256);
+    // WiFi_mac_addr[i] = (uint8_t) (rand() % 100 + 100);
+    WiFi_mac_addr[i] = (uint8_t) (rand() % 256);
   }
   
   memset(ssid,0,sizeof(ssid));
