@@ -9,27 +9,6 @@
   <br/><br/>
 </p>
 
-<details>
-  <summary><b>Table of Contents</b></summary>
-  <p>
-
-- **Getting Started**
-    - [📡️ Features](#features-️)
-    - [⚡ Demo Gallery](#demo-gallery-️)
-    - [⚙️ Build](#build-️)
-    - [📟 Code Overview](#code-overview-)
-- **Learning More**
-    - [🎥 Watch it in Action](#watch-it-in-action-)
-    - [📄 Read the Article](https://medium.com/@angelinatsuboi/detecting-hacker-aircraft-using-artificial-intelligence-ec249baa866b)
-- **Community**
-    - [✨ Contributing](#contributing-)
-    - [🏆 Special Thanks & Credits](#special-thanks--credits-)
-    - [💜 Support](#support-)
-    - [📜 License](https://github.com/ANG13T/fly-catcher/blob/main/LICENSE)
-
-  </p>
-</details>
-
 <br />
 
 <details>
