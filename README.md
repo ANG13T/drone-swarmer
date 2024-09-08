@@ -42,9 +42,9 @@
 
 <table>
   <tr>
-    <td valign="top"><img src="https://github.com/ANG13T/fly-catcher/blob/main/assets/display_1.png?raw=true" alt="Gallery Image" height="180" width="250"> <h4 align="center">Picture of the completed build</h4></td>
-    <td valign="top"><img src="https://github.com/ANG13T/fly-catcher/blob/main/assets/display_2.png?raw=true" alt="Gallery Image" height="180" width="250"> <h4 align="center">Device shown with the SportCruiser</h4></td>
-    <td valign="top"><img src="https://github.com/ANG13T/fly-catcher/blob/main/assets/display_3.png?raw=true" alt="Gallery Image" height="180" width="250"> <h4 align="center">Display shown on the TFT Screen</h4></td>
+    <td valign="top"><img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_1.jpg" alt="Gallery Image" height="180" width="250"> <h4 align="center">Picture of the build</h4></td>
+    <td valign="top"><img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_2.jpg" alt="Gallery Image" height="180" width="250"> <h4 align="center">Device shown attached to DJI drone</h4></td>
+    <td valign="top"><img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_3.jpg" alt="Gallery Image" height="180" width="250"> <h4 align="center">Open Drone ID packet analysis with Wireshark</h4></td>
   </tr>
 </table>
 
@@ -57,32 +57,21 @@ Watch DroneSwarmer in action on the NullByte YouTube channel
 
 ###  Materials List
 - NEO6M GPS Module
+- ESP8266 WEMOS D1 Mini
 
-<img src="https://github.com/ANG13T/fly-catcher/blob/main/assets/materials.png?raw=true" alt="Folium Map" width="400" />
+<img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_4.png" alt="Prototyping Build" width="400" />
 
 
-### Running the Radar Code
+### Code Overview
 
-Clone the Repository on the Pi
+1. Clone the Repository 
 ```
-git clone https://github.com/ANG13T/fly-catcher.git
+git clone https://github.com/ANG13T/drone-swarmer.git
 ```
 
-Run the Program
-```
-python3 fly-catcher/device-rpi/piawareradar.py longitude latitude
-```
-Replace longitude and latitude with your [geo-coordinates](https://www.gps-coordinates.net/)
+2. Install the Arduino IDE
+3. Install Libraries for the Project
 
-## Detecting for Spoofing 🔎
-
-### Download the Jupyter Notebook
-```
-git clone https://github.com/ANG13T/fly-catcher.git
-cd notebook
-jupyter notebook
-```
-Install [Jupyter Notebook](https://jupyter.org/install) if you do not have it
 
 
 ## Research Article 🔬
@@ -100,11 +89,9 @@ Drone Swarmer is open to any contributions. Please fork the repository and make 
 ## Special Thanks & Credits 🏆
 The Drone Swarmer leveraged on previous ADS-B works and references included below
 
-- [Pi Aware Radar by Martin O'Hanlon](http://www.stuffaboutcode.com/2015/11/raspberry-pi-piaware-aircraft-radar.html)
-- [Reference dump1090 README](https://github.com/SDRplay/dump1090/blob/master/README-json.md)
-- [Data Samples from ADSB Exchange](https://www.adsbexchange.com/data-samples/)
-- [IEEE Research on ADS-B Signals](https://ieeexplore.ieee.org/document/9377975)
-
+- https://mavlink.io/en/services/opendroneid.html
+- https://github.com/opendroneid/opendroneid-core-c
+- https://github.com/opendroneid/receiver-android
 
 ## Support 💜
 If you enjoyed Drone Swarmer, please consider becoming a sponsor in order to fund my future projects.
