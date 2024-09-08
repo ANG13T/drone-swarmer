@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="800" src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/banner.png" alt="DroneSwarmer image" />
+  <img width="800" src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/banner.png" alt="Drone Swarmer image" />
 </p>
 <h1 align="center" style="font-size:50px !important;">Drone Swarmer</h1>
 <p align="center">
@@ -14,10 +14,10 @@
   <p>
 
 - **Getting Started**
-    - [✈️ Features](#features-️)
+    - [📡️ Features](#features-️)
     - [⚡ Demo Gallery](#demo-gallery-️)
-    - [⚙️ Build](#build-it-yourself-️)
-    - [🚀 Code Base](#detecting-for-spoofing-)
+    - [⚙️ Build](#build-️)
+    - [📟 Code Overview](#code-overview-)
 - **Learning More**
     - [🎥 Watch it in Action](#watch-it-in-action-)
     - [📄 Read the Article](https://medium.com/@angelinatsuboi/detecting-hacker-aircraft-using-artificial-intelligence-ec249baa866b)
@@ -30,16 +30,25 @@
   </p>
 </details>
 
-### Disclaimer
+<br />
 
-## Features ✈️
+<details>
+  <summary><b>Disclaimer ⚠️</b></summary>
+  <p>
+Drone Swarmer is a proof-of-concept device designed for research purposes only. The project demonstrates the potential vulnerabilities in the Open Drone ID protocol, specifically relating to drone identification systems. **The use of this device to spoof drones or interfere with legal and authorized drone operations is illegal in many jurisdictions.**
+
+This project is intended strictly for **educational and research purposes** to highlight the need for improved security in drone communication systems. **Do not use Drone Swarmer in any manner that violates the law or regulations in your country.**
+  </p>
+</details>
+
+
+## Features 📡
 - 📡  Spoofing "ghost" drones using Wi-Fi beacon broadcasts
 - 🔨  ESP8266 and NEO6M GPS module prototype
 - ⚙️  Code variant of [Remote ID Spoofer](https://github.com/jjshoots/RemoteIDSpoofer)
 
 
 ## Demo Gallery ⚡️
-
 <table>
   <tr>
     <td valign="top"><img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_1.jpg" alt="Gallery Image" height="180" width="250"> <h4 align="center">Picture of the build</h4></td>
@@ -49,8 +58,7 @@
 </table>
 
 ## Watch it in Action 🎥
-Watch DroneSwarmer in action on the NullByte YouTube channel
-
+Watch Drone Swarmer in action on the NullByte YouTube channel:
 
 
 ## Build ⚙️
@@ -62,36 +70,52 @@ Watch DroneSwarmer in action on the NullByte YouTube channel
 <img src="https://github.com/ANG13T/drone-swarmer/blob/main/assets/asset_4.png" alt="Prototyping Build" width="400" />
 
 
-### Code Overview
+### Code Overview 📟
 
 1. Clone the Repository 
 ```
 git clone https://github.com/ANG13T/drone-swarmer.git
 ```
 
-2. Install the Arduino IDE
-3. Install Libraries for the Project
+2. Install the [Arduino IDE](https://www.arduino.cc/en/software)
 
+3. Install the ESP8266 Board Manager
+```
+Tools -> Board -> Board Manager
 
+Search for "ESP8266 Boards" and Install
+```
+
+4. Install Libraries for the Project 
+```
+Sketch -> Include Library -> Manage Libraries
+
+Search for: "Adafruit GPS Library" and Install
+```
+
+5. Select "LOLIN(WEMOS) D1 Mini" Board under "Tools -> Board"
+
+6. Click the "Upload" Button
 
 ## Research Article 🔬
-To get a more in-depth and technical overview of Fly Catcher, you can refer to this [research article](google.com)
+To get a more in-depth and technical overview of Drone Swarmer, you can refer to this [research article](#)
 
 ## Future Improvements 🚀
-- Enhanced UI features on the radar screen
-- Deep learning techniques such as RNNs and LSTM networks
-- Incorporating reinforcement learning techniques
-- Differentiate spoofing attacks (ie. GPS spoofing, aircraft masquerading, etc)
+- Find a way to include multiple microcontroller boards to spoof more than 16 drones (current capacity)
+- Create a localhost web server to display the spoofed drones on a map
+- Look into possible MAC Address collission issues within the code that may be causing the 16 drone capacity limit (refer to research article)
 
 ## Contributing ✨
 Drone Swarmer is open to any contributions. Please fork the repository and make a pull request with the features or fixes you want to implement.
 
 ## Special Thanks & Credits 🏆
-The Drone Swarmer leveraged on previous ADS-B works and references included below
+The Drone Swarmer leveraged on previous Open Drone ID projects, research, and references included below
 
-- https://mavlink.io/en/services/opendroneid.html
-- https://github.com/opendroneid/opendroneid-core-c
-- https://github.com/opendroneid/receiver-android
+- [Remote ID Spoofer](https://github.com/jjshoots/RemoteIDSpoofer)
+- [Mavlink Overview of Open Drone ID](https://mavlink.io/en/services/opendroneid.html)
+- [Open Drone ID Code](https://github.com/opendroneid/opendroneid-core-c)
+- [Android Open Drone ID Receiver](https://github.com/opendroneid/receiver-android)
+- [Open Drone ID Wireshark Dissector](https://github.com/opendroneid/wireshark-dissector)
 
 ## Support 💜
 If you enjoyed Drone Swarmer, please consider becoming a sponsor in order to fund my future projects.
