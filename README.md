@@ -5,8 +5,6 @@
 <p align="center">
   <i>Drone Swarmer is an ESP8266 device that spoofs "ghost" drones by exploiting an Open Drone ID vulnerability using Wi-Fi Beacon broadcasts</i>
    <br/><br/>
-  <b><a href="#features-️">Learn More</a></b> | <b><a href="#build️">Build</a></b> | <b><a href="#detecting-for-spoofing-">Getting Started</a></b> | <b><a href="#">Video</a></b> | <b><a href="#">Research Paper</a></b> | <b><a href="#">Article</a></b>
-  <br/><br/>
 </p>
 
 <br />
